@@ -28,7 +28,6 @@ const App : React.FC = () => {
 	// Utilised Axios for API calls
 	const apiResponse = await axios.get(`http://api.disneyapi.dev/characters?page=${pageNumber}`);
 	setCharacters(apiResponse.data.data);
-	console.log(characters);
   };
 
  
