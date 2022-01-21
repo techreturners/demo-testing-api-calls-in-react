@@ -30,16 +30,23 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-test("renders the world of disney title", async () => {
+test("renders The World of Disney title", async () => {
   render(<App />);
+  // Adding aync await to this function removes warning
   await waitFor(() => screen.getAllByText("Add to Favourites"));
-  const linkElement = screen.getByText(/The World of Disney/i);
-  expect(linkElement).toBeInTheDocument();
+  const titleElement = screen.getByText(/The World of Disney/i);
+  expect(titleElement).toBeInTheDocument();
 });
 
-test("renders the character abu", async () => {
+test("renders the character Abu", async () => {
+  // Arrange
   render(<App />);
+
+  // Act
+  // We use getAllByText as there are multiple 'Add to Favourites'
   await waitFor(() => screen.getAllByText("Add to Favourites"));
-  const linkElement = screen.getByText(/Abu/i);
-  expect(linkElement).toBeInTheDocument();
+  const characterElement = screen.getByText(/Abu/i);
+
+  // Assert
+  expect(characterElement).toBeInTheDocument();
 });
