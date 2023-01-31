@@ -24,7 +24,7 @@ const App: React.FC = () => {
 	}, [currentPage]);
 
 	const getCharacters = async (pageNumber: number) => {		
-		const apiResponse = await fetch(`http://api.disneyapi.dev/characters?page=${pageNumber}`);
+		const apiResponse = await fetch(`https://api.disneyapi.dev/characters?page=${pageNumber}`);
 		const json = await apiResponse.json() as { data: DisneyCharacter[] };
 		setCharacters(json.data);
 	};
