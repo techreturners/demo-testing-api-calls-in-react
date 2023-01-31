@@ -23,8 +23,7 @@ const App: React.FC = () => {
 		getCharacters(currentPage);
 	}, [currentPage]);
 
-	const getCharacters = async (pageNumber: number) => {
-		// Utilised Axios for API calls
+	const getCharacters = async (pageNumber: number) => {		
 		const apiResponse = await fetch(`http://api.disneyapi.dev/characters?page=${pageNumber}`);
 		const json = await apiResponse.json() as { data: DisneyCharacter[] };
 		setCharacters(json.data);
