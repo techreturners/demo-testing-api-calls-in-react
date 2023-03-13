@@ -4,7 +4,7 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 
 const server = setupServer(
-  rest.get("http://api.disneyapi.dev/characters", (req, res, ctx) => {
+  rest.get("https://api.disneyapi.dev/characters", (req, res, ctx) => {
     return res(
       ctx.json({
         data: [
