@@ -4,6 +4,7 @@
   margin: 0;
   font-family: "Mouse Memoirs";
   background-color: #bde0fe;
+  min-height: 100vh;
 }
 
 .header__container {
@@ -44,15 +45,39 @@
   min-width: 50px;
 }
 
-.character-container {
-  max-width: 90%;
-  margin: 0 auto;
+.card-container {
+  max-width: 100%; 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center
 }
 
-.character-row {
+.card {
+  border: 3px solid #666;
+  background-color: pink;
+  width: 200px;
+  padding: 30px;
+  margin: 30px;
   display: flex;
-  flex-flow: row wrap;
-  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 20px;
+  min-height: 300px;
+}
+
+.card__img {
+  max-height: 250px;
+}
+
+.card__button {
+  font-family: "Mouse Memoirs";
+  outline: none;
+  background: transparent;
+  border: 1px solid transparent;
+  font-weight: lighter;
+  font-size: 1.3em;
+  cursor: pointer;
 }
 
 @media (max-width: 675px) {
@@ -65,26 +90,4 @@
     font-size: 3.5em;
     margin: 5px;
   }
-}
-
-.character-item {
-  flex: 1;
-  border: 3px solid #666;
-  border-radius: 5%;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 10px;
-  height: 440px;
-  background-color: #ffafcc;
-}
-
-.character-item__img {
-  max-height: 270px;
-}
-
-.character-item__actions {
-  font-size: 1.3em;
-  padding: 10px;
-  cursor: pointer;
-  font-weight: lighter;
 }

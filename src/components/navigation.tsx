@@ -30,6 +30,10 @@ const Navigation : React.FC<{ currentPage: number, setCurrentPage: (page: number
             </div>
         </div>
 
+
+
+
+
     )
 }
 
