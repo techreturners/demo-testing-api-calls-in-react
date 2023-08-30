@@ -43,8 +43,8 @@ test("renders the character Abu", async () => {
   render(<App />);
 
   // Act
-  // We use getAllByText as there are multiple 'Add to Favourites'
-  await waitFor(() => screen.getAllByText("Add to Favourites"));
+  // We use findAllByText as there are multiple 'Add to Favourites'
+  await waitFor(() => screen.findAllByText("Add to Favourites"));
   const characterElement = screen.getByText(/Abu/i);
 
   // Assert
