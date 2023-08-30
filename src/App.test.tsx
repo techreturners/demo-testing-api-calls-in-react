@@ -4,7 +4,7 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 
 const server = setupServer(
-  rest.get("https://api.disneyapi.dev/characters", (req, res, ctx) => {
+  rest.get("https://api.disneyapi.dev/character", (req, res, ctx) => {
     return res(
       ctx.json({
         data: [
@@ -33,7 +33,7 @@ afterAll(() => server.close());
 test("renders The World of Disney title", async () => {
   render(<App />);
   // Adding aync await to this function removes warning
-  await waitFor(() => screen.getAllByText("Add to Favourites"));
+  await waitFor(() => screen.findAllByText("Add to Favourites"));
   const titleElement = screen.getByText(/The World of Disney/i);
   expect(titleElement).toBeInTheDocument();
 });

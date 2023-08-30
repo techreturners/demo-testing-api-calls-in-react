@@ -1,4 +1,3 @@
-import React from 'react';
 import { DisneyCharacter } from '../disney_character';
 import Character from './character';
 

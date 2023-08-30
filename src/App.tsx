@@ -14,7 +14,7 @@ const App: React.FC = () => {
 
 	useEffect(() => {
 		const getCharacters = async (pageNumber: number) => {		
-			const apiResponse = await fetch(`https://api.disneyapi.dev/characters?page=${pageNumber}`);
+			const apiResponse = await fetch(`https://api.disneyapi.dev/character?page=${pageNumber}`);
 			const json = await apiResponse.json() as { data: DisneyCharacter[] };
 			setCharacters(json.data);
 		};
