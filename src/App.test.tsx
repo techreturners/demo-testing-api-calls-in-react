@@ -33,7 +33,7 @@ afterAll(() => server.close());
 test("renders The World of Disney title", async () => {
   render(<App />);
   // Adding aync await to this function removes warning
-  await waitFor(() => screen.findAllByText("Add to Favourites"));
+  await screen.findAllByText("Add to Favourites");
   const titleElement = screen.getByText(/The World of Disney/i);
   expect(titleElement).toBeInTheDocument();
 });
@@ -44,7 +44,7 @@ test("renders the character Abu", async () => {
 
   // Act
   // We use findAllByText as there are multiple 'Add to Favourites'
-  await waitFor(() => screen.findAllByText("Add to Favourites"));
+  await screen.findAllByText("Add to Favourites");
   const characterElement = screen.getByText(/Abu/i);
 
   // Assert
